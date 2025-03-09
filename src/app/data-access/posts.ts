@@ -10,7 +10,7 @@ type Post = {
 export const fetchPosts = async () => {
     try {
         const res = await api('/posts')
-        return res.data as Post
+        return res.data as Post[]
     } catch (error) {
         if (error instanceof Error) {
             console.log(error.message)
@@ -18,7 +18,7 @@ export const fetchPosts = async () => {
     }
 }
 
-export const getPost = (id: number) => {
+export const getPost = async (id: number) => {
     try {
         const res = await api(`/posts/${id}`)
         return res.data as Post
