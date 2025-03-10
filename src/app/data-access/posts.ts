@@ -21,6 +21,7 @@ export const fetchPosts = async () => {
 export const getPost = async (id: number) => {
     try {
         const res = await api(`/posts/${id}`)
+        console.log('res', res)
         return res.data as Post
     } catch (error) {
         if (error instanceof Error) {
